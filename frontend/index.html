@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChurnGuard - Customer Retention Intelligence</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">ChurnGuard</div>
+            <div class="nav-links">
+                <button class="nav-link active" data-page="home">Home</button>
+                <button class="nav-link" data-page="single">Single Analysis</button>
+                <button class="nav-link" data-page="batch">Batch Analysis</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home-page" class="page active">
+        <div class="container hero-section">
+            <div class="hero-content">
+                <h1>Predict Customer Churn Before It Happens</h1>
+                <p class="hero-description">
+                    ChurnGuard uses machine learning to identify customers at risk of leaving.
+                    Get actionable insights powered by AI to keep your customers engaged and loyal.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="navigateTo('single')">Analyze Single Customer</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('batch')">Process Batch</button>
+                </div>
+            </div>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Accurate Predictions</h3>
+                    <p>Machine learning model trained on customer behavior patterns to predict churn risk</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3>Explainable AI</h3>
+                    <p>Understand exactly why a customer might leave with SHAP value explanations</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💡</div>
+                    <h3>Smart Recommendations</h3>
+                    <p>Get AI-powered retention strategies tailored to each customer's situation</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Single User Analysis Page -->
+    <section id="single-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Single Customer Analysis</h2>
+                <p>Enter customer details to predict their churn risk and get retention insights</p>
+            </div>
+
+            <div class="analysis-layout">
+                <!-- Input Form -->
+                <div class="form-section">
+                    <form id="customerForm">
+                        <div class="form-section-title">Customer Profile</div>
+                        
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Gender</label>
+                                <select name="gender">
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Senior Citizen</label>
+                                <select name="SeniorCitizen">
+                                    <option value="0">No</option>
+                                    <option value="1">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Partner</label>
+                                <select name="Partner">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Dependents</label>
+                                <select name="Dependents">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <label>Tenure (months)</label>
+                            <input type="number" name="tenure" value="12" min="0">
+                        </div>
+
+                        <div class="form-section-title">Services</div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Phone Service</label>
+                                <select name="PhoneService">
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Internet Service</label>
+                                <select name="InternetService">
+                                    <option value="Fiber optic">Fiber optic</option>
+                                    <option value="DSL">DSL</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Online Security</label>
+                                <select name="OnlineSecurity">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Tech Support</label>
+                                <select name="TechSupport">
+                                    <option value="No">No</option>
+                                    <option value="Yes">Yes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Billing</div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Contract Type</label>
+                                <select name="Contract">
+                                    <option value="Month-to-month">Month-to-month</option>
+                                    <option value="One year">One year</option>
+                                    <option value="Two year">Two year</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label>Payment Method</label>
+                                <select name="PaymentMethod">
+                                    <option value="Electronic check">Electronic check</option>
+                                    <option value="Mailed check">Mailed check</option>
+                                    <option value="Bank transfer">Bank transfer</option>
+                                    <option value="Credit card">Credit card</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label>Monthly Charges ($)</label>
+                                <input type="number" name="MonthlyCharges" value="70" step="0.01" min="0">
+                            </div>
+                            <div class="form-field">
+                                <label>Total Charges ($)</label>
+                                <input type="number" name="TotalCharges" value="840" step="0.01" min="0">
+                            </div>
+                        </div>
+
+                        <!-- Hidden fields for complete data -->
+                        <input type="hidden" name="MultipleLines" value="No">
+                        <input type="hidden" name="OnlineBackup" value="No">
+                        <input type="hidden" name="DeviceProtection" value="No">
+                        <input type="hidden" name="StreamingTV" value="No">
+                        <input type="hidden" name="StreamingMovies" value="No">
+                        <input type="hidden" name="PaperlessBilling" value="Yes">
+
+                        <button type="submit" class="btn btn-primary btn-full">Analyze Customer</button>
+                    </form>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section" id="singleResults">
+                    <div class="empty-state">
+                        <div class="empty-icon">📈</div>
+                        <p>Fill in the customer details and click "Analyze Customer" to see predictions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Batch Analysis Page -->
+    <section id="batch-page" class="page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Batch Customer Analysis</h2>
+                <p>Upload a CSV file to analyze multiple customers and generate retention strategies</p>
+            </div>
+
+            <!-- Upload Section -->
+            <div id="uploadSection" class="upload-section">
+                <div class="upload-card">
+                    <div class="upload-icon">📁</div>
+                    <h3>Upload Customer Data</h3>
+                    <p>Select a CSV file containing customer information</p>
+                    <input type="file" id="csvFile" accept=".csv" style="display: none;">
+                    <button class="btn btn-primary" onclick="document.getElementById('csvFile').click()">
+                        Choose File
+                    </button>
+                    <div id="fileName" class="file-name"></div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div id="batchResults" class="batch-results" style="display: none;">
+                <div class="results-header">
+                    <h3>Analysis Complete</h3>
+                    <div class="results-actions">
+                        <button class="btn btn-secondary" onclick="downloadResults()">Download CSV</button>
+                        <button class="btn btn-outline" onclick="resetBatch()">New Analysis</button>
+                    </div>
+                </div>
+                <div id="strategyReport" class="strategy-report"></div>
+                <div id="dataPreview" class="data-preview"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/prediction.js"></script>
+    <script src="js/batch.js"></script>
+    <script src="js/chart.js"></script>
+</body>
+</html>

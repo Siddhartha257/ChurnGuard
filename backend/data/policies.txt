@@ -1,0 +1,100 @@
+TELCO COMPANY PROFILE & SERVICE POLICIES
+
+Company Overview
+----------------
+The company is a telecom service provider offering mobile, internet, and bundled
+communication services to individual customers. The focus is on affordability,
+service reliability, and long-term customer retention.
+
+Customer Segments
+-----------------
+1. Individual prepaid customers
+2. Individual postpaid customers
+3. Long-term contract customers
+4. New customers (tenure less than 12 months)
+
+Available Plans
+---------------
+1. Month-to-Month Plan
+   - No long-term commitment
+   - Higher monthly charges
+   - Flexible cancellation
+   - Limited loyalty benefits
+
+2. One-Year Contract Plan
+   - Discounted monthly pricing
+   - Early termination fee applies
+   - Includes basic customer support benefits
+
+3. Two-Year Contract Plan
+   - Lowest monthly pricing
+   - Loyalty rewards included
+   - Priority customer support
+   - Early termination fee applies
+
+Internet & Service Add-ons
+--------------------------
+- High-speed internet add-on
+- International calling packs
+- Streaming service bundles
+- Family or multi-line discounts
+
+Add-ons can be activated or removed at any time for month-to-month users.
+Contract users may have restrictions depending on plan terms.
+
+Billing Rules
+-------------
+- Monthly charges are fixed based on the selected plan and add-ons.
+- Late payments may result in service warnings.
+- Auto-pay customers receive small monthly discounts.
+- Price increases are communicated in advance.
+
+Customer Support Policy
+-----------------------
+- Standard support is available to all customers.
+- Priority support is available for long-term contract customers.
+- Multiple unresolved tickets may indicate dissatisfaction.
+- Proactive support outreach is encouraged for high-risk customers.
+
+Loyalty & Retention Programs
+----------------------------
+- Discounts for customers with tenure above 12 months
+- Special upgrade offers for contract renewal
+- Temporary promotional discounts may be offered
+- Loyalty benefits are not guaranteed and depend on eligibility
+
+Retention Constraints
+---------------------
+- Discounts must stay within approved limits.
+- No forced contract renewals.
+- No misleading or hidden charges.
+- Offers must align with customer usage and plan type.
+
+Common Churn Indicators (Business Perspective)
+----------------------------------------------
+- High monthly charges with low perceived value
+- Short tenure and low engagement
+- Frequent billing or service complaints
+- Month-to-month contracts without add-ons
+- Limited interaction with loyalty programs
+
+Recommended Retention Actions
+-----------------------------
+- Suggest plan optimization instead of price cuts
+- Educate customers on unused benefits
+- Offer contract upgrades when suitable
+- Improve service experience through support follow-ups
+- Provide personalized offers based on usage patterns
+
+Restrictions for Recommendations
+--------------------------------
+- Do not promise permanent discounts.
+- Do not override company pricing rules.
+- Do not suggest services that are unavailable to the customer.
+- Do not offer benefits outside defined plans.
+
+End of Document
+---------------
+This document represents the official service structure, plans, and operational
+constraints of the company and must be respected when generating customer-facing
+explanations or retention recommendations.

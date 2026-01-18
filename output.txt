@@ -1,0 +1,22 @@
+User Uploads CSV
+    ↓
+routes.py (/predict_batch_analysis)
+    ↓
+predict_batch() [prediction_service.py]
+    ├─→ Predicts churn for ALL customers
+    ├─→ Identifies high-risk customers (prob > 0.6)
+    └─→ calculate_batch_shap_aggregate() [shap_service.py]
+        └─→ Calculates SHAP ONLY for high-risk customers
+            └─→ Returns: Top 10 features with importance scores
+    ↓
+analyze_high_risk_group() [batch_service.py]
+    ├─→ Basic stats (count, averages, patterns)
+    └─→ Adds SHAP insights (top 5 churn drivers)
+    ↓
+generate_batch_strategy_prompt() [ai_service.py]
+    └─→ Includes SHAP data in prompt
+    ↓
+Gemini AI generates strategy report
+    └─→ Prioritizes strategies based on SHAP feature importance
+    ↓
+Returns to frontend: Strategy Report + Customer Data
