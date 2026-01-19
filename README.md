@@ -1,6 +1,10 @@
 # ChurnGuard - Customer Churn Prediction System
 
-ChurnGuard is a machine learning-powered web application that predicts which customers are likely to leave (churn) and provides actionable insights to help retain them. It's built for telecom companies but can be adapted for any subscription-based business.
+ChurnGuard is a machine learning-powered web application that uses LightGBM to predict which customers are likely to leave (churn). To ensure transparency and provide actionable insights, ChurnGuard integrates SHAP (SHapley Additive exPlanations) to interpret individual predictions. The system leverages an innovative application of a Large Language Model (LLM) to automatically translate these SHAP-derived data insights and company-specific policies into personalized, natural-language retention strategies. This novel hybrid approach helps retain customers effectively and is designed for telecom companies but can be adapted for any subscription-based business.
+
+
+
+
 
 ## Why This Exists
 
@@ -213,7 +217,7 @@ We tested multiple algorithms in `cross_model_validator.ipynb`:
 - Random Forest
 - XGBoost
 - LightGBM
-- Neural Networks (Keras)
+
 
 Each model was tested with different imbalance handling strategies:
 - SMOTE (Synthetic Minority Over-sampling)
@@ -283,6 +287,7 @@ The `class_weight='balanced'` automatically calculates weights inversely proport
 - ✅ Better generalization to production data
 - ✅ Simpler pipeline (one less preprocessing step)
 - ✅ Native support in LightGBM (optimized implementation)
+
 
 
 Class weights consistently outperformed oversampling methods while being simpler and faster.
@@ -537,7 +542,7 @@ Frontend shows Gemini's text in a green box with lightbulb icon.
 ```bash
 # Clone repository
 git clone <your-repo-url>
-cd SuperVity
+cd ChurnGuard
 
 # Create virtual environment
 python3 -m venv venv
@@ -617,7 +622,7 @@ Visit: http://localhost:3000
 ## Project Structure
 
 ```
-SuperVity/
+ChurnGuard/
 ├── backend/
 │   ├── data/
 │   │   ├── best_churn_model.pkl   # Trained model
