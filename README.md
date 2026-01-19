@@ -284,13 +284,6 @@ The `class_weight='balanced'` automatically calculates weights inversely proport
 - ✅ Simpler pipeline (one less preprocessing step)
 - ✅ Native support in LightGBM (optimized implementation)
 
-**Comparison Results:**
-
-| Approach | F1 Score | Training Time | Risk of Overfitting | Complexity |
-|----------|----------|---------------|---------------------|------------|
-| SMOTE | ~0.82 | Slow | Medium | High |
-| KMeans SMOTE | ~0.81 | Very Slow | High | Very High |
-| **Class Weights** | **~0.84** | **Fast** | **Low** | **Low** |
 
 Class weights consistently outperformed oversampling methods while being simpler and faster.
 
